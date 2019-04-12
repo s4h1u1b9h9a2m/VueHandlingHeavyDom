@@ -1,2 +1,0 @@
-# VueHandlingHeavyDom
-Created with CodeSandbox
