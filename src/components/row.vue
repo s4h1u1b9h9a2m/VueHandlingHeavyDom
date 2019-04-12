@@ -3,7 +3,7 @@
     <div class="item">{{index}}</div>
     <div class="item">Hey</div>
     <div class="item">
-      <!-- <SelectComponent :selected="selectedValue(index)" :maxLength="maxSelectLength"/> -->
+      <SelectComponent :limit="2" :selected="selectedValue" :maxLength="maxSelectLength"/>
     </div>
   </div>
 </template>
@@ -16,12 +16,12 @@ export default {
   props: ["item", "index"],
   data() {
     return {
-      maxSelectLength: 1000
+      maxSelectLength: 10
     };
   },
-  methods: {
-    selectedValue(number) {
-      return number % 100;
+  computed: {
+    selectedValue() {
+      return this.index % 100;
     }
   }
 };
